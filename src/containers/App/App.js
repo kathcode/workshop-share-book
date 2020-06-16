@@ -1,20 +1,21 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// Shared Components
-import Header from '../../shared/Header';
-import Container from '../../shared/Container';
-import FloatingIcon from '../../shared/FloatingIcon';
+import List from '../../pages/List';
+
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header title="ShareBook" />
-      <FloatingIcon className="add-button" icon="+" />
-      <Container>
-        <div>Container...</div>
-      </Container>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/">
+            <List />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
