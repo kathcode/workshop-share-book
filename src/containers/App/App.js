@@ -22,13 +22,14 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    const { shareBooks } = this.state;
+
     return (
       <Router>
         <div className="App">
           <Switch>
             <Route exact path="/">
-              <List />
+              <List shareBooks={shareBooks} />
             </Route>
             <Route path="/create">
               <Create onCreate={this.addShareBook} />

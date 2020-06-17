@@ -7,7 +7,9 @@ import Header from '../../shared/Header';
 import Container from '../../shared/Container';
 import FloatingIcon from '../../shared/FloatingIcon';
 
-const List = () => {
+import Card from '../../shared/Card';
+
+const List = ({ shareBooks }) => {
   return (
     <div>
       <Header title="ShareBook" />
@@ -15,7 +17,12 @@ const List = () => {
         <FloatingIcon className="add-button" icon="+" />
       </Link>
       <Container>
-        <div>Container...</div>
+        <div className="share-book-list">
+          {shareBooks.length &&
+            shareBooks.map((book) => (
+              <Card imageUrl={book.imageUrl} author={book.author} />
+            ))}
+        </div>
       </Container>
     </div>
   );
