@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import './List.css';
 
 // Shared Components
@@ -11,7 +11,9 @@ const List = () => {
   return (
     <div>
       <Header title="ShareBook" />
-      <FloatingIcon className="add-button" icon="+" />
+      <Link to="/create">
+        <FloatingIcon className="add-button" icon="+" />
+      </Link>
       <Container>
         <div>Container...</div>
       </Container>

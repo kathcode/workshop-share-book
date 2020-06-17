@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './Create.css';
 
@@ -7,11 +8,13 @@ import Header from '../../shared/Header';
 import Container from '../../shared/Container';
 import FloatingIcon from '../../shared/FloatingIcon';
 
-const Create = (props) => {
+const Create = (porps) => {
   return (
     <div>
       <Header title="ShareBook" />
-      <FloatingIcon className="close-button" icon="x" />
+      <Link to="/">
+        <FloatingIcon className="close-button" icon="x" />
+      </Link>
       <Container>
         <div>Create...</div>
       </Container>
