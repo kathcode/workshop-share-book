@@ -6,21 +6,38 @@ import Create from '../../pages/Create';
 
 import './App.css';
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <List />
-          </Route>
-          <Route path="/create">
-            <Create />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      shareBooks: [],
+    };
+  }
+
+  addShareBook = (newShareBook) => {
+    this.setState({
+      shareBooks: [...this.state.shareBooks, newShareBook],
+    });
+  };
+
+  render() {
+    console.log(this.state);
+    return (
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <List />
+            </Route>
+            <Route path="/create">
+              <Create onCreate={this.addShareBook} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
